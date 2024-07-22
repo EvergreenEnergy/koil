@@ -12,8 +12,8 @@ class PedanticKoil(BaseModel, KoilMixin):
     name: str = "KoilLoop"
     uvify: bool = True
     grace_period: Optional[float] = None
-    grant_sync = True
-    sync_in_async = False
+    #grant_sync = True
+    #sync_in_async = False
 
     _token = None
     _loop = None
