@@ -462,16 +462,14 @@ class WrappedObject(QtCore.QObject):
 
 @dataclass
 class QtKoil(QtKoilMixin):
+    model_config = ConfigDict(arbitrary_types_allowed=True)
+    
     auto_enter = True
     disconnect_on_close: bool = True
     parent: QtWidgets.QWidget = None
 
     def __post_init__(self):
         self.name = self.parent.__class__.__name__
-
-    class Config:
-        arbitrary_types_allowed = True
-
 
 
 def create_qt_koil(parent, auto_enter: bool=True) -> QtKoil:

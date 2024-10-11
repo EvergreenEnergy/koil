@@ -10,9 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 class QtPedanticKoil(PedanticKoil, QtKoilMixin):
+    model_config = ConfigDict(arbitrary_types_allowed=True)
+
     parent: Optional[QtWidgets.QWidget] = None
     _qobject: Optional[QtCore.QObject] = None
-
-    class Config:
-        underscore_attrs_are_private = True
-        arbitrary_types_allowed = True
